@@ -1,16 +1,16 @@
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import { HashRouter } from 'react-router-dom';
+import App from './App';
 import { RoomContext } from './context/RoomContext';
-import ReactDOM from 'react-dom/client'
-import React from 'react'
-import App from './App'
 import './style/index.css';
 
-
-ReactDOM
-  .createRoot(document.getElementById('root'))
-  .render(
-    <RoomContext>
-      <React.StrictMode>
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <RoomContext>
+    <React.StrictMode>
+      <HashRouter>
         <App />
-      </React.StrictMode>
-    </RoomContext>,
-  )
+      </HashRouter>
+    </React.StrictMode>
+  </RoomContext>
+);

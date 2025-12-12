@@ -1,37 +1,21 @@
-import { BrowserRouter, Route, Routes, } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import { Footer, Header, PageNotFound } from './components';
 import { Home, RoomDetails } from './pages';
 
-
 const App = () => {
-
-  // const paths = [
-  //   { path: '/', element: <Home /> },
-  //   { path: '/room/:id', element: <RoomDetails /> },
-  //   { path: '*', element: <PageNotFound /> },
-  // ]
-
-  // const router = createBrowserRouter(paths);
-  // <RouterProvider router={router} /> 
-
   return (
+    <main>
+      <Header />
 
-    <main className=''>
-      <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/room/:id" element={<RoomDetails />} />
+        <Route path="*" element={<PageNotFound />} />
+      </Routes>
 
-        <Header />
-
-        <Routes>
-          <Route path={'/'} element={<Home />} />
-          <Route path={'/room/:id'} element={<RoomDetails />} />
-          <Route path={'*'} element={<PageNotFound />} />
-        </Routes>
-
-        <Footer />
-
-      </BrowserRouter>
+      <Footer />
     </main>
-  )
-}
+  );
+};
 
-export default App
+export default App;
